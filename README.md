@@ -56,7 +56,6 @@ make dev
 ```
 
 4. Access the application
-- API: http://localhost:3000
 - API Documentation: http://localhost:3000/api-docs
 - Database: PostgreSQL running on port 5432
 
