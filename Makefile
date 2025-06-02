@@ -6,7 +6,6 @@ dev:
 
 # Clean start (stops local postgres, rebuilds containers)
 clean-dev:
-	sudo systemctl stop postgresql || true
 	docker compose down
 	docker compose up --build
 
@@ -16,7 +15,6 @@ stop:
 
 # Complete reset (removes volumes too)
 reset:
-	sudo systemctl stop postgresql || true
 	docker compose down -v
 	docker compose up --build
 
