@@ -1,13 +1,15 @@
 # Team Manager API
 
 ## 📘 Project Description
-**Team Manager API** is a RESTful backend service demonstrating scalable API design and database architecture. Built with **Node.js** and **TypeScript**, it showcases:
+**Team Manager API** is an experimental project built to explore and demonstrate modern API design patterns and best practices. While not intended for production use, it's built with professional standards to showcase:
 
 - **Object-Oriented Design** with service layers and dependency injection
 - **Relational Database** modeling with Prisma ORM
 - **RESTful API** design with **Express**
 - **Clean Architecture** principles and best practices
 - **Docker** containerization for scalable deployment
+
+This project serves as a technical demonstration and learning platform, implementing industry best practices in a controlled environment.
 
 ## 🧱 System Architecture
 
