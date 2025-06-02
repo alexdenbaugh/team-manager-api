@@ -1,111 +1,104 @@
-# Team Manager Api
+# Team Manager API
 
 ## 📘 Project Description
-**Team Manager API** is a RESTful backend service designed to manage users and their associated teams in a many-to-many relationship. This project was developed as part of a focused learning sprint/refresher to deepen expertise in backend architecture, **object oriented programming**, **relational database design**, and **cloud deployment readiness** for real-world, scalable applications.
+**Team Manager API** is a RESTful backend service demonstrating scalable API design and database architecture. Built with **Node.js** and **TypeScript**, it showcases:
 
-## Table of Contents:
+- **Object-Oriented Design** with service layers and dependency injection
+- **Relational Database** modeling with Prisma ORM
+- **RESTful API** design with **Express**
+- **Clean Architecture** principles and best practices
+- **Docker** containerization for scalable deployment
 
-- [🧱 System Architecture Overview](#🧱-system-architecture-overview)
-- [🧠 Key Features](#🧠-key-features)
-- [🔍 Why This Project?](#🔍-why-this-project)
-- [🚀 Goals](#🚀-goals)
-- [🚀 Quick Start](#🚀-quick-start)
-- [🛠 Development Commands](#🛠-development-commands)
-- [📡 API Endpoints](#📡-api-endpoints)
+## 🧱 System Architecture
 
-## 🧱 System Architecture Overview
+### Backend Stack
+- **Node.js + Express** - Scalable server architecture
+- **TypeScript** - Type safety and OOP patterns
+- **PostgreSQL** - Robust relational database
+- **Prisma ORM** - Type-safe database queries and migrations
+- **Docker** - Containerization and deployment readiness
 
-This project follows a layered structure using **TypeScript** and **OOP patterns**:
-
+### Project Structure
 ```
 /src
-/controllers → Handle HTTP requests and responses
-/services → Business logic in reusable, testable classes
-/routes → Define Express routes and connect to controllers
-/models → Prisma schema and database interactions
-/types → TypeScript interfaces and shared types
-/utils → Utility functions (e.g., DB connection)
+├── controllers/   # Request handling and response formatting
+├── services/     # Business logic and data operations
+├── routes/       # API endpoint definitions
+├── types/        # TypeScript interfaces and types
+└── utils/        # Shared utilities and helpers
 ```
-- Backend built with **Node.js + Express + TypeScript**
-- **PostgreSQL** as relational DB, managed via **Prisma ORM**
-- Containers orchestrated with **Docker + Docker Compose**
-- Ready for CI/CD and cloud deployment (Azure-compatible)
-
-## 🧠 Key Features
-- Modular, OOP-based architecture using TypeScript classes and service layers
-- PostgreSQL schema with many-to-many relationships and Prisma ORM
-- Redis (optional) caching layer for performance optimization
-- Full containerization via Docker and orchestration with Docker Compose
-- Designed with scalability, maintainability, and best practices in mind
-- CI/CD-ready and deployable to platforms like Azure or Render
-
-## 🔍 Why This Project?
-This project was created to demonstrate proficiency in technologies and patterns commonly used in modern backend engineering roles, particularly those emphasized in senior-level positions such as:
-- Service abstraction and architecture design
-- Relational database schema modeling and query logic
-- Scalable application deployment with Docker
-- Clean code principles and organized folder structure
-
-## 🚀 Goals
-- Solidify Node.js + Express knowledge beyond CRUD-level apps
-- Practice applying SOLID principles and TypeScript for backend systems
-- Build deployable, production-style infrastructure using Docker
-- Create a live, shareable repo for interview conversations
 
 ## 🚀 Quick Start
 
-To start development:
+### Environment Setup
 
+1. Clone the repository
+```bash
+git clone https://github.com/alexdenbaugh/team-manager-api.git
+cd team-manager-api
+```
+
+2. Set up environment variables
+```bash
+# Copy the example environment file
+cp .env.example .env
+```
+
+3. Start the development environment
 ```bash
 # First time setup
 make clean-dev
 
 # Subsequent development sessions
 make dev
-
-# Stop containers
-make stop
 ```
 
-## 🛠 Development Commands
+4. Access the application
+- API: http://localhost:3000
+- API Documentation: http://localhost:3000/api-docs
+- Database: PostgreSQL running on port 5432
 
-### Makefile Commands (Infrastructure)
-| Command           | Description                                                    |
-|-------------------|----------------------------------------------------------------|
-| `make dev`        | 🟢 Start development environment (normal daily use)            |
-| `make clean-dev`  | 🧼 Clean start: stops local postgres, rebuilds containers     |
-| `make stop`       | ⏹️ Stop all containers                                         |
-| `make reset`      | 🛠 Complete reset (removes volumes too)                        |
-| `make logs`       | 📄 View container logs                                         |
-| `make shell-db`   | 🐘 Shell into database container                               |
-| `make shell-api`  | 📦 Shell into API container                                    |
-| `make migrate`    | 📂 Run database migrations                                     |
-| `make seed`       | 🌱 Seed database with sample data                              |
+## 📡 API Documentation
 
-### npm Scripts (Application)
-| Command                | Description                                      |
-|------------------------|--------------------------------------------------|
-| `npm run dev:local`    | 🚀 Run API locally (without Docker)             |
-| `npm run build`        | 🔨 Build TypeScript to JavaScript               |
-| `npm run db:migrate`   | 📂 Apply database migrations using Prisma       |
-| `npm run db:generate`  | 🔁 Regenerate Prisma client                     |
-| `npm run db:seed`      | 🌱 Seed database with sample data               |
-| `npm run test`         | 🧪 Run tests (placeholder for future)           |
+The API is documented in two ways for different use cases:
 
-## 📡 API Endpoints
+1. **Quick Reference**: See [APIDOCS.md](./APIDOCS.md) for a complete API reference that can be viewed directly on GitHub.
 
-| Method | Endpoint                  | Description                              |
-|--------|---------------------------|------------------------------------------|
-| GET    | `/users`                  | Fetch all users                          |
-| POST   | `/users`                  | Create a new user                        |
-| GET    | `/teams`                  | Fetch all teams                          |
-| POST   | `/teams`                  | Create a new team                        |
-| GET    | `/teams/:id/users`        | Get all users in a specific team         |
-| POST   | `/teams/:id/users/:userId`| Add a user to a team                     |
+2. **Interactive Documentation**: When running the application locally, visit http://localhost:3000/api-docs for an interactive Swagger UI.
 
-<!-- ## ✅ What to Add After This
-Once you're running:
-- Add routes: /users, /teams, /teams/:id/users
-- Add Redis (optional)
-- Add error handling and middleware
-- Add README and push to GitHub -->
+## 🛠 Development Features
+
+- **Type Safety**: Full TypeScript implementation
+- **OOP Patterns**: Service-based architecture with dependency injection
+- **Error Handling**: Centralized error handling with custom error types
+- **Database**: Prisma migrations and type-safe queries
+- **Testing**: Ready for unit and integration tests
+- **Docker**: Multi-stage builds and development environment
+- **Documentation**: Swagger UI and markdown documentation
+
+## 🔍 Code Quality
+
+- Clean code principles
+- SOLID design patterns
+- Consistent error handling
+- Type-safe implementations
+- Documented APIs and interfaces
+
+## 🚀 Future Enhancements
+
+- Redis caching layer
+- Unit and integration tests
+- CI/CD pipeline
+- Azure cloud deployment
+- Authentication and authorization
+
+## 📦 Available Scripts
+
+| Command           | Description                                      |
+|------------------|--------------------------------------------------|
+| `make dev`       | Start development environment                     |
+| `make clean-dev` | Clean start with fresh containers                |
+| `make migrate`   | Run database migrations                          |
+| `make seed`      | Seed database with sample data                   |
+| `npm run build`  | Build TypeScript to JavaScript                   |
+| `npm run test`   | Run tests (placeholder)                          |

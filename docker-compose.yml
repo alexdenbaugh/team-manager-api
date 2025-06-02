@@ -26,7 +26,7 @@ services:
         condition: service_healthy
     volumes:
       - .:/app
-    command: sh -c "npx prisma migrate deploy && npm run dev"
+    command: sh -c "npx prisma migrate deploy && npm run dev:local"
 
 volumes:
   postgres-data:
