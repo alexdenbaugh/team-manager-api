@@ -175,3 +175,4 @@ Common HTTP Status Codes:
 - **404** Not Found - Requested resource doesn't exist
 - **409** Conflict - Resource already exists or conflict with existing data
 - **500** Server Error - Unexpected server error 
+ 

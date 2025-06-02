@@ -104,3 +104,26 @@ The API is documented in two ways for different use cases:
 | `make seed`      | Seed database with sample data                   |
 | `npm run build`  | Build TypeScript to JavaScript                   |
 | `npm run test`   | Run tests (placeholder)                          |
+
+## Troubleshooting
+
+### Port Conflicts
+If you encounter port conflicts when starting the application:
+
+1. For API port conflict (default 3000):
+   - Change the PORT in your .env file: `PORT=3001`
+   - Restart Docker containers: `make clean-dev`
+
+2. For Database port conflict (default 5432):
+   - Change the DB_PORT in your .env file: `DB_PORT=5433`
+   - Update DATABASE_URL to match the new port
+   - Restart Docker containers: `make clean-dev`
+
+### Other Common Issues
+1. Make sure no local PostgreSQL instance is running
+   - Linux: `sudo systemctl stop postgresql`
+   - Mac: `brew services stop postgresql`
+
+2. If containers won't start:
+   - Try a full reset: `make reset`
+   - Check Docker logs: `make logs`
